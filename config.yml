@@ -20,3 +20,4 @@ params:
       <a href="https://creativecommons.org/licenses/by/2.0/"> CC-BY-2.0 license</a>.
 
       <img style='margin: 1em auto' src='title.svg'/>
+  ShowShareButtons: true

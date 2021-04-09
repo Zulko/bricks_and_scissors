@@ -2,6 +2,7 @@
 author: "Zulko"
 title: "Strange dominos: the fun and perils of DNA overhang design"
 date: 2021-04-08T08:47:11+01:00
+tags: [synbio, DNA, design]
 ---
 
 > _**Note:** I simplified technical terms and details whenever possible to keep this post focused on the design problems and accessible to a larger audience._
