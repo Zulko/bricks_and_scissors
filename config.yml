@@ -23,5 +23,4 @@ params:
   ShowShareButtons: true
   analytics:
     google:
-      SiteVerificationTag: UA-194244778-1
-  googleAnalytics: UA-194244778-1
+      SiteVerificationTag: G-1EZWW833S2
