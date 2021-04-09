@@ -21,7 +21,8 @@ params:
 
       <img style='margin: 1em auto' src='title.svg'/>
   ShowShareButtons: true
+  env: production
   analytics:
     google:
       SiteVerificationTag: G-1EZWW833S2
-  googleAnalytics: UA-194244778-1
+  # googleAnalytics: UA-194244778-1
