@@ -1,12 +1,13 @@
 baseURL: https://zulko.github.io/bricks_and_scissors/
 languageCode: en-us
 title: Bricks and Scissors
-theme: "PaperMod"
 markup:
   goldmark:
     renderer:
       unsafe: true
 custom_css: ["assets/custom.css"]
+googleAnalytics: UA-194244778-1
+theme: "PaperMod"
 params:
   ShowReadingTime: true
   disableThemeToggle: true
@@ -22,7 +23,17 @@ params:
       <img style='margin: 1em auto' src='title.svg'/>
   ShowShareButtons: true
   env: production
-  analytics:
-    google:
-      SiteVerificationTag: G-1EZWW833S2
-  googleAnalytics: UA-194244778-1
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: G-1EZWW833S2
+  author: Zulko
+  outputs:
+    home:
+      - HTML
+      - RSS
+      - JSON
+  socialIcons:
+    - name: github
+      url: "https://github.com/Zulko/bricks_and_scissors"
+    - name: RsS
+      url: "index.xml"
