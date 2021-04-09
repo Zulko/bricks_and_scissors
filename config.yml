@@ -24,3 +24,4 @@ params:
   analytics:
     google:
       SiteVerificationTag: UA-194244778-1
+  googleAnalytics: UA-194244778-1
