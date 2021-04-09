@@ -3,9 +3,9 @@ name: Build GH-Pages
 on:
   push:
     paths-ignore:
-      - 'images/**'
-      - 'LICENSE'
-      - 'README.md'
+      - "images/**"
+      - "LICENSE"
+      - "README.md"
     branches:
       - master
   workflow_dispatch:
@@ -14,7 +14,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    steps:
       - name: Get Theme
         run: git submodule update --init --recursive
 
@@ -24,7 +24,7 @@ jobs:
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: "latest"
 
       - name: Build
         run: hugo --buildDrafts --gc --verbose --minify
