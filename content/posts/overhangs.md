@@ -1,8 +1,7 @@
 ---
 author: "Zulko"
 title: "Strange dominos: the fun and perils of DNA overhang design"
-date: 2021-03-31T08:47:11+01:00
-draft: true
+date: 2021-04-08T08:47:11+01:00
 ---
 
 > _**Note:** I simplified technical terms and details whenever possible to keep this post focused on the design problems and accessible to a larger audience._
@@ -117,7 +116,7 @@ Is this overhang set valid? List the reasons why not.
 
 **Problem 3**
 
-Let's throw some real-world shade! What would you improve in the overhang design of this bacterial engineering standard? (you don't need to understand the figures to answer, simply look at the overhang sequences).
+Let's throw some real-world shade! What would you improve in the overhang design of the [Ecoflex](https://pubs.acs.org/doi/10.1021/acssynbio.6b00031) bacterial engineering standard? (you don't need to understand the figures to answer, simply look at the overhang sequences).
 
 <img
   src="https://media.addgene.org/data/easy-thumbnails/filer_public/cms/filer_public/57/70/577078e5-b78e-4f6f-b380-e9de2eed96f8/ecoflex-figure-1b.png__400x498_q85_subsampling-2_upscale.png"
