@@ -21,3 +21,6 @@ params:
 
       <img style='margin: 1em auto' src='title.svg'/>
   ShowShareButtons: true
+  analytics:
+    google:
+      SiteVerificationTag: G-1EZWW833S2
