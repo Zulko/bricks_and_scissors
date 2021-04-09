@@ -15,6 +15,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
       - name: Get Theme
         run: git submodule update --init --recursive
 
