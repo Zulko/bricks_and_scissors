@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata');
+
 .page-header,
 .post-header {
     margin: 24px auto var(--content-gap) auto
@@ -199,7 +201,7 @@
 .post-content code {
     margin: auto 4px;
     padding: 4px 6px;
-    font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
+    font-family: Inconsolata, Menlo, Monaco, 'Courier New', Courier, monospace;
     font-size: .78em;
     line-height: 1.5;
     background: var(--code-bg);
