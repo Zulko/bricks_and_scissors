@@ -3,7 +3,6 @@ author: "Zulko"
 title: "DNA consruction strategies from graph algorithms"
 date: 2021-04-08T08:47:11+01:00
 tags: [synbio, DNA, assembly, software]
-draft: true
 ---
 
 ---
@@ -399,7 +398,7 @@ Cutting through the middle, 15c/nucleotide is a good choice of typical price. An
   width=600
 />
 
-For problems with more sources it can get trickier. but you get the general idea. The important is that when the algorithm finds out that a 5000-nucleotide fragment of the sequence can be obtained virtually for free via PCR, it will understand that it is on a "fast lane" and that there are probably no other way but to use that free source. Let's come back to this problem:
+For problems with more sources it can get trickier, but you get the general idea. The important is that when the algorithm finds out that a 5000-nucleotide fragment of the sequence can be obtained virtually for free via PCR, it will understand that it is on a "fast lane" and that there are probably no other way but to use that free source. Let's come back to this problem:
 
 <img
   src="../../post_assets/dnaweaver/supply_network_examples/complex.png"
@@ -415,7 +414,7 @@ As it turns out, the optimal price heuristic seems to also be ~15c/nucleotide, m
   width=650
 />
 
-## Manufacturing fear is the mind-killer
+## Manufacturing fear is a mind-killer
 
 Fifty years ago, synthesizing a 50-mucleotide bit of DNA was a scientific achievement. Today a high-schooler can order a gene for a few hundred dollars. But for longer sequences we're not out of the woods yet. It will take time to plan, it will hit your budget, and in some cases the success is not even guaranteed. I've seen this being a big factor of project paralysis in Synthetic Biology, with researchers pondering their options, planning their orders for months before taking a leap.
 
