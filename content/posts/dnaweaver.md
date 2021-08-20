@@ -340,11 +340,16 @@ The great thing with the graph representation of the DNA construction problem is
     style='display: block; margin: 1cm auto 2cm; width: 550px;'
   />
 
-- \_"For future projects, I'll need to force the junction between two fragments to absolutely happen at a
+- _"I need to force the junction between two fragments to absolutely happen at a certain location in the sequence, so I can swap parts later"_. Simply remove all edges of the graph that go over that location:
+
+<img
+    src="../../post_assets/dnaweaver/graph-operations/force_location.png"
+    style='display: block; margin: 1cm auto 2cm; width: 550px;'
+  />
 
 - _"The assembly method works badly when assembly more than 10 parts"_: if the shortest path has more than 10 edges, add a constant penalty weight to each edge, and compute the new shortest path, which should have less edges. Increase the penalty if necessary.
 
-- _"Golden Gate assembly overhangs should all be inter-compatible"_ (read <a target='_blank' href='https://zulko.github.io/bricks_and_scissors/posts/overhangs/'>this other article on that subject</a>): If the assembly strabtegy correspondings to the shortest path has DNA fragments with imcompatible overhangs, use a backtracking algorithm (Yen 1971, as <a target='_blank' href='https://networkx.org/documentation/networkx-1.10/reference/generated/networkx.algorithms.simple_paths.shortest_simple_paths.html#id2'>implemented in Networkx</a> to iterate through the 2nd-shortest-path, 3rd, 4th, etc. until one assembly has compatible overhangs.
+- _"Golden Gate assembly overhangs should all be inter-compatible"_ (read <a target='_blank' href='https://zulko.github.io/bricks_and_scissors/posts/overhangs/'>this other article on that subject</a>): If the assembly strabtegy correspondings to the shortest path has DNA fragments with imcompatible overhangs, use a backtracking algorithm (Yen 1971, as <a target='_blank' href='https://networkx.org/documentation/networkx-1.10/reference/generated/networkx.algorithms.simple_paths.shortest_simple_paths.html#id2'>implemented in Networkx</a>) to iterate through the 2nd-shortest-path, 3rd, 4th, etc. until one assembly has compatible overhangs.
 
 - _"Oligo assembly only works with an even number of fragments"_ -- I actually don't have an elegant solution for this one, but <a href='https://stackoverflow.com/questions/32722448/shortest-path-with-even-number-of-edges' target='_blank'>here is a stackoverflow suggestion</a> for finding even-edged shortest path via an heavy transformation of the graph.
 
@@ -414,7 +419,7 @@ As it turns out, the optimal price heuristic seems to also be ~15c/nucleotide, m
   width=650
 />
 
-## Manufacturing fear is a mind-killer
+## Conclusion
 
 Fifty years ago, synthesizing a 50-mucleotide bit of DNA was a scientific achievement. Today a high-schooler can order a gene for a few hundred dollars. But for longer sequences we're not out of the woods yet. It will take time to plan, it will hit your budget, and in some cases the success is not even guaranteed. I've seen this being a big factor of project paralysis in Synthetic Biology, with researchers pondering their options, planning their orders for months before taking a leap.
 
