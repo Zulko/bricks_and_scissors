@@ -5,13 +5,18 @@ date: 2021-04-08T08:47:11+01:00
 tags: [synbio, DNA, design]
 ---
 
+---
+
 > _**Note:** I simplified technical terms and details whenever possible to keep this post focused on the design problems and accessible to a larger audience._
 
+---
+
+or only to come up with it
 If you want to stitch more than 2 bits of DNA together, the most popular method these days is probably Golden Gate Assembly. In a nutshell, you mix DNA fragments in a tube where enzymes will cut their flanks to create _overhangs_ (also called _sticky ends_), then fuse the overhangs together to form the desired DNA construct:
 
 <img
   src="../../post_assets/overhang_design/simple_dna_assembly.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=550
 />
 
@@ -19,7 +24,7 @@ How do we know that the DNA parts will assemble in the expected order A-B-C-D, a
 
 <img
   src="../../post_assets/overhang_design/successive_overhangs.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=500
 />
 
@@ -27,7 +32,7 @@ Let's have a closer look at Parts A and B. Each has two strands, with the lower 
 
 <img
   src="../../post_assets/overhang_design/parts_closer_look.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=500
 />
 
@@ -35,7 +40,7 @@ When the flank-cutting enzyme cuts the right flank of Part A, it leaves an overh
 
 <img
   src="../../post_assets/overhang_design/digestion_detail.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=450
 />
 
@@ -43,7 +48,7 @@ The two ends are perfectly complementary and will be fused to form a single DNA 
 
 <img
   src="../../post_assets/overhang_design/ligation_detail.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=350
 />
 
@@ -55,7 +60,7 @@ Throughout the DNA assembly protocol, several copies of each part are freely flo
 
 <img
   src="../../post_assets/overhang_design/parts_in_water.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=450
 />
 
@@ -67,7 +72,7 @@ Don't use the same overhang sequence for different part fusions. If the overhang
 
 <img
   src="../../post_assets/overhang_design/skipped_overhang.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=450
 />
 
@@ -77,7 +82,7 @@ Beware of reverse-complementary overhangs! In the example below, each fusion is 
 
 <img
   src="../../post_assets/overhang_design/reverse_complements.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=600
 />
 
@@ -89,7 +94,7 @@ Don't use overhang sequences that are their own reverse-complements. For instanc
 
 <img
   src="../../post_assets/overhang_design/palyndromic_overhang.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=500
 />
 
@@ -101,7 +106,7 @@ According to the rules above, which letter should replace the X?
 
 <img
   src="../../post_assets/overhang_design/problem_1.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=550
 />
 
@@ -111,7 +116,7 @@ Is this overhang set valid? List the reasons why not.
 
 <img
   src="../../post_assets/overhang_design/problem_2.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=600
 />
 
@@ -121,7 +126,7 @@ Let's throw some real-world shade! What would you improve in the overhang design
 
 <img
   src="https://media.addgene.org/data/easy-thumbnails/filer_public/cms/filer_public/57/70/577078e5-b78e-4f6f-b380-e9de2eed96f8/ecoflex-figure-1b.png__400x498_q85_subsampling-2_upscale.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=500
 />
 
@@ -141,7 +146,7 @@ Other constraints arise when designing overhangs that will appear at biologicall
 
 <img
   src="../../post_assets/overhang_design/phytobrick.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=650
 />
 
@@ -149,13 +154,13 @@ Notice that the second overhang `AATG` is at the very beginning of a coding sequ
 
 **Extra rule #2**
 
-No scars! In the most flexible bioengineering projects, you are allowed to add a few nucleotides here and therein the desired sequences to make them easier to assemble from parts. These added nucleotides with no function other than to enable construction are called "assembly scars".
+No scars! In the most flexible bioengineering projects, you are allowed to add a few nucleotides here and there in the desired sequences to make them easier to assemble from parts. These added nucleotides with no function other than to enable construction are called "assembly scars".
 
 In more demanding bioengineering projects, the desired sequences are so biologically significant and tightly designed that they absolutely cannot be modified -- they don't allow scars. For your assembly, this means that the overhang sequences _must_ be part of the desired final construct sequence:
 
 <img
   src="../../post_assets/overhang_design/scarless_assembly.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=650
 />
 
@@ -163,7 +168,7 @@ This constraint still leaves some choice in the overhang sequences. For instance
 
 <img
   src="../../post_assets/overhang_design/fusion_in_this_zone.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=200
 />
 
@@ -171,7 +176,7 @@ Each overhang of the assembly will be picked from a different region of the fina
 
 <img
   src="../../post_assets/overhang_design/cut_around_here_fragments.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=700
 />
 
@@ -179,7 +184,7 @@ The example above is a bit underwhelming, but biologists have managed some reall
 
 <img
   src="../../post_assets/overhang_design/tsuge_et_al.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=650
 />
 
@@ -198,7 +203,7 @@ More recently [Potapov et al (2018)](https://pubs.acs.org/doi/10.1021/acssynbio.
 
 <img
   src="../../post_assets/overhang_design/potapov_et_al.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=450
 />
 
@@ -218,7 +223,7 @@ In this approach, you first list all the overhangs that you'll allow yourself to
 
 <img
   src="../../post_assets/overhang_design/overhangs_no_edges.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=400
 />
 
@@ -226,7 +231,7 @@ Next, you draw an edge between each pair of overhangs that are compatible accord
 
 <img
   src="../../post_assets/overhang_design/compatibility_graph.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=400
 />
 
@@ -234,7 +239,7 @@ Now any valid set of overhangs (where all overhangs are inter-compatible) corres
 
 <img
   src="../../post_assets/overhang_design/clique.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=400
 />
 
@@ -267,7 +272,7 @@ The clique trick is great for finding new sets of compatible overhangs, but it c
 
 <img
   src="../../post_assets/overhang_design/cut_around_here_fragments.png"
-  style='display: block; margin: 0 auto;'
+  style='display: block; margin: 2em auto 2em;'
   width=650
 />
 
@@ -309,6 +314,6 @@ For the code above to fully work, you would need to convert each overhang sequen
 
 ## Conclusion
 
-I like overhang design problems because they are in many ways characteristic of the field: simple at first glance, but with many gotchas that will ruin your project if you don't pay attention. They can be a thorn in the foot of whoever wants to extend an existing parts collection or assemble a scarless sequence, and they regularly get in the way of bioengineers' ambitions. But at the end of the day they can be resolved with simple scripts and well-established computational methods, which is a great win for applied maths.
+Overhang design problems are in many ways characteristic of the field: simple at first glance, but with many gotchas that will ruin your project if you don't pay attention. They can be a thorn in the foot of whoever wants to extend an existing parts collection or assemble a scarless sequence, and they regularly get in the way of bioengineers' ambitions. But at the end of the day they can be resolved with simple scripts and well-established computational methods, which is a great win for applied maths.
 
 If you were rooting against the biologist, don't worry: once past overhang design, there are many other ways an assembly project can tear someone's carreer and self-esteem to pieces. Some of these can still be prevented using yet other computational tools, which will be the subject of future posts.
