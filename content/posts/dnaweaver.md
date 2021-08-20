@@ -1,13 +1,13 @@
 ---
 author: "Zulko"
-title: "DNA consruction strategies from graph algorithms"
+title: "DNA construction strategies from graph algorithms"
 date: 2021-04-08T08:47:11+01:00
 tags: [synbio, DNA, assembly, software]
 ---
 
 ---
 
-> _**Note:** This is a bloggification of [these IWBDA 2019 slides](https://github.com/Edinburgh-Genome-Foundry/egf-shared-documents/blob/master/slideshows/dnaweaver_presentation_iwbda_2019/talk_long.pdf) on how path-finding tricks used in Google Maps and strategy games can also help build long DNA molecules._
+> _**Note:** This is a bloggification of <a href='https://github.com/Edinburgh-Genome-Foundry/egf-shared-documents/blob/master/slideshows/dnaweaver_presentation_iwbda_2019/talk_long.pdf' target='_blank'>these IWBDA 2019 slides</a> on how path-finding tricks used in Google Maps and strategy games can also help build long DNA molecules._
 
 ---
 
@@ -344,9 +344,9 @@ The great thing with the graph representation of the DNA construction problem is
 
 - _"The assembly method works badly when assembly more than 10 parts"_: if the shortest path has more than 10 edges, add a constant penalty weight to each edge, and compute the new shortest path, which should have less edges. Increase the penalty if necessary.
 
-- _"Golden Gate assembly overhangs should all be inter-compatible"_ (read <a target='_blank' href='https://zulko.github.io/bricks_and_scissors/posts/overhangs/'>this other article on that subject</a>): If the assembly strabtegy correspondings to the shortest path has DNA fragments with imcompatible overhangs, use a backtracking algorithm (Yen 1971, as [implemented in Networkx](https://networkx.org/documentation/networkx-1.10/reference/generated/networkx.algorithms.simple_paths.shortest_simple_paths.html#id2)) to iterate through the 2nd-shortest-path, 3rd, 4th, etc. until one assembly has compatible overhangs.
+- _"Golden Gate assembly overhangs should all be inter-compatible"_ (read <a target='_blank' href='https://zulko.github.io/bricks_and_scissors/posts/overhangs/'>this other article on that subject</a>): If the assembly strabtegy correspondings to the shortest path has DNA fragments with imcompatible overhangs, use a backtracking algorithm (Yen 1971, as <a target='_blank' href='https://networkx.org/documentation/networkx-1.10/reference/generated/networkx.algorithms.simple_paths.shortest_simple_paths.html#id2'>implemented in Networkx</a> to iterate through the 2nd-shortest-path, 3rd, 4th, etc. until one assembly has compatible overhangs.
 
-- _"Oligo assembly only works with an even number of fragments"_ -- I actually don't have an elegant solution for this one, but [here is a stackoverflow suggestion](https://stackoverflow.com/questions/32722448/shortest-path-with-even-number-of-edges) for finding even-edged shortest path via an heavy transformation of the graph.
+- _"Oligo assembly only works with an even number of fragments"_ -- I actually don't have an elegant solution for this one, but <a href='https://stackoverflow.com/questions/32722448/shortest-path-with-even-number-of-edges' target='_blank'>here is a stackoverflow suggestion</a> for finding even-edged shortest path via an heavy transformation of the graph.
 
 ### Harder, faster, ~~stronger~~: the A-star algorithm
 
