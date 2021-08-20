@@ -242,7 +242,7 @@ Finally, here is _"I use yeast recombination to assemble big fragments, which I 
   width=350
 />
 
-So it is possible to represent the most common DNA assembly problems via networks of DNA suppliers following mostly simple internal logics. The one nodes of this network that will require complex internal logics are assembly stations, who have the central responsibility of decomposing the requested sequence into fragments that will as cheap as possible to produce by their sources. How do they do it?
+So it is possible to represent the most common DNA assembly problems via networks of DNA suppliers following mostly simple rules. The one nodes of this network that will require complex internal logics are assembly stations, who have the central responsibility of decomposing the requested sequence into fragments that will as cheap as possible to produce by their sources. How do they do it?
 
 ## Step 2: finding the right cuts
 
