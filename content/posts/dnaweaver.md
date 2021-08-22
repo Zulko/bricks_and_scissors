@@ -141,7 +141,7 @@ These methods vary in their capabilities, for instance how many sequence fragmen
 
 ### So yeah, it's complicated
 
-The multitude of possible sources and assembly methods can make the planning of large DNA assemblies a hard combinatorial problem. I've seen meetings for complex projects where everyone with DNA wisdom is gathered in a same room, the sequence(s) to build put on display, and it goes a bit like this:
+The multitude of possible sources and assembly methods can make the planning of large DNA assemblies a hard combinatorial problem. I've seen meetings for complex projects where everyone with DNA wisdom is gathered in a same room, the requested sequence(s) put on display, and it goes a bit like this:
 
 <img
   src="../../post_assets/dnaweaver/elrond.jpg"
@@ -253,28 +253,28 @@ Given a set of DNA sources (vendors, libraries, PCR extraction...) and a given s
   style='display: block; margin: 1cm auto 2cm; width: 550px;'
 />
 
-There have been many approaches to this problem, using deterministic algorithms, genetic algorithms, etc., but these approaches generally explore only a small fraction of the possibilities. The most efficient solution I found consists in representing the question as a graph shortest-path problem. First, take a segment of the sequence, and add whichever flanks required by your assembly method (homologies with neighboring sequences, restriction sites...) to obtain the fragment to order:
+There have been many approaches to this problem, using deterministic algorithms, genetic algorithms, etc., but these approaches generally explore only a small fraction of the possibilities. The most efficient solution I found consists in representing the question as a graph shortest-path problem. First, take a segment of the sequence, and add any necessary flanking sequences (which, depending on the assembly method used, could be homologies with neighboring segments, enzyme restriction sites, etc.). You obtain the DNA sequence order corresponding to that segment:
 
 <img
 src="../../post_assets/dnaweaver/shortest_path/1_fragment_sequence.png"
 style='display: block; margin: 1cm auto 2cm; width: 550px;'
 />
 
-Then submit this fragment to all the suppliers to obtain a best offer. Mark the segment with that price (and remember who the best supplier is):
+Then submit this fragment to all the assembly station's suppliers. Some will respond that they cannot provide the sequence, and some will respond with a price. Select the best price and mark the segment:
 
 <img
   src="../../post_assets/dnaweaver/shortest_path/2_best_price.png"
   style='display: block; margin: 1cm auto 2cm; width: 550px;'
 />
 
-Do the same for every subsegment of the sequence, to obtain the _decomposition graph_ of the sequence:
+Do the same for every subsegment of the sequence, to obtain a _decomposition graph_:
 
 <img
   src="../../post_assets/dnaweaver/shortest_path/3_assembly_graph.png"
   style='display: block; margin: 1cm auto 2cm; width: 550px;'
 />
 
-In that graph, find the shortest path from the first to the last nucleotide: it corresponds to the optimal sequence decomposition into fragments. All you need at this point is to remember the best supplier for each fragment:
+In that graph, find the shortest path from the first to the last nucleotide: it corresponds to the optimal sequence decomposition into contiguous segments. All you need at this point is to remember the best supplier for each segment, and order the fragments from them:
 
 <img
   src="../../post_assets/dnaweaver/shortest_path/4_shortest_path.png"
@@ -324,7 +324,7 @@ Finally, a Github search gave me <a target='_blank' href='https://github.com/jvr
 
 ### Cloning constraints as graph operations
 
-The great thing with the graph representation of the DNA construction problem is how you can model practical cloning constraints with simple operations:
+The great thing graph representations of DNA construction problems is that you can model practical cloning constraints with simple operations:
 
 - _"My assembly method doesn't work with fragments shorter than X or longer than Y"_: just remove all graph edges spanning more than Y or less than X.
 
@@ -349,15 +349,15 @@ The great thing with the graph representation of the DNA construction problem is
 
 - _"The assembly method works badly when assembly more than 10 parts"_: if the shortest path has more than 10 edges, add a constant penalty weight to each edge, and compute the new shortest path, which should have less edges. Increase the penalty if necessary.
 
-- _"Golden Gate assembly overhangs should all be inter-compatible"_ (read <a target='_blank' href='https://zulko.github.io/bricks_and_scissors/posts/overhangs/'>this other article on that subject</a>): If the assembly strabtegy correspondings to the shortest path has DNA fragments with imcompatible overhangs, use a backtracking algorithm (Yen 1971, as <a target='_blank' href='https://networkx.org/documentation/networkx-1.10/reference/generated/networkx.algorithms.simple_paths.shortest_simple_paths.html#id2'>implemented in Networkx</a>) to iterate through the 2nd-shortest-path, 3rd, 4th, etc. until one assembly has compatible overhangs.
+- _"Golden Gate assembly overhangs should all be inter-compatible"_ (read <a target='_blank' href='https://zulko.github.io/bricks_and_scissors/posts/overhangs/'>this other article on that subject</a>): If the assembly strategy correspondings to the shortest path has DNA fragments with imcompatible overhangs, use a backtracking algorithm (Yen 1971, as <a target='_blank' href='https://networkx.org/documentation/networkx-1.10/reference/generated/networkx.algorithms.simple_paths.shortest_simple_paths.html#id2'>implemented in Networkx</a>) to iterate through the 2nd-shortest-path, 3rd, 4th, etc. until one assembly has compatible overhangs.
 
 - _"Oligo assembly only works with an even number of fragments"_ -- I actually don't have an elegant solution for this one, but <a href='https://stackoverflow.com/questions/32722448/shortest-path-with-even-number-of-edges' target='_blank'>here is a stackoverflow suggestion</a> for finding even-edged shortest path via an heavy transformation of the graph.
 
-### Harder, faster, ~~stronger~~: the A-star algorithm
+### Harder, faster, sometimes better: the A-star algorithm
 
 One bottleneck of the graph representation approach is that large sequences (from tens of thousands of nucleotides) will require to cost millions of edges, which will take a few minutes. This is generally acceptable for foundry operators, given the reward, but too slow to give web customers the instantaneous, flight-booking-like experience that will keep them asking for prices as they tweak their DNA designs.
 
-A solution to this is _A\*_, another shortest-path algorithm which can just ignore most edges of the graph if they look unlikely to be part to the optimal solution. It may sometimes be wrong, and miss the best path, but it is a very good approximator.
+A solution to this is _A\*_, another shortest-path algorithm which can just ignore the edges of the graph that are less likely to be part to the optimal solution. It may sometimes be wrong, and miss the best path, but it is a very good approximator.
 
 Here is an illustration (from user user <a target='blank' href='https://en.wikipedia.org/wiki/User:Subh83?rdfrom=commons:User:Subh83'>Subh83</a> on the <a href='https://en.wikipedia.org/wiki/A*_search_algorithm' target='_blank'>A\* wikipedia page</a> where _A\*_ finds a similar path that is only 10% longer path by exploring 50% less edges:
 
@@ -388,14 +388,16 @@ The speed and good approximation make A\* a good choice for interactive applicat
 
 A\* is so good at ignoring graph edges because it is fed a particular piece of information from which it will evaluate, at any point of the search, how far it is from its goal. For the illustration above, the information may be the geometric distance to the goal divided by the average terrain speed. If you are looking for the fastest trip in a city, Google Maps will probably use the distance to your goal, divided by the typical speed of the city's transportation opportunities. To find the cheapest DNA construction strategy, that information will be the number of nucleotides left, times the typical price per-nucleotide price of DNA.
 
-The art is to decide what a "typical per-nucleotide price" is. If you pick it too low, the A* algorithm will have practically no advantage over Djikstra (it will be slow), and if you take it too high, A* will assume that any move is cheap, and go for the most obvious ways to build the sequence, even if they are expensive. Say your providers are two companies charging 10c/nucleotide and 20c/nucleotide respectively.
+The art is to decide what a "typical per-nucleotide price" is. If you pick it too low, the A* algorithm will have practically no advantage over Djikstra (it will be just as slow), and if you pick it too high, A* will assume that any move is cheap, and go for the most obvious (and expensive) ways to build the sequence.
+
+As a first example, say your commercial providers are two companies charging 10c/nucleotide and 20c/nucleotide respectively:
 
 <img
     src="../../post_assets/dnaweaver/supply_network_examples/two_vendors.png"
     style='display: block; margin: 2cm auto 2cm; width: 280px;'
   />
 
-Cutting through the middle, 15c/nucleotide is a good choice of typical price. And indeed, the assembly station running an A\* search with this parameter will be more than 10 times faster, and find still find optimal solutions. A lower parameter value provides no speed advantage, and a higher value creates naive and expensive DNA assembly plans:
+Cutting through the middle, 15c/nucleotide is a good choice of typical price to feed to A\*. And indeed, the assembly station running an A\* search with this parameter will be more than 10 times faster, and find still find optimal solutions. A lower parameter value provides no speed advantage, and a higher value creates naive and expensive DNA assembly plans:
 
 <img
   src="../../post_assets/dnaweaver/a_star/two_vendors_results.png"
@@ -423,4 +425,4 @@ As it turns out, the optimal price heuristic seems to also be ~15c/nucleotide, m
 
 Fifty years ago, synthesizing a 50-mucleotide bit of DNA was a scientific achievement. Today a high-schooler can order a gene for a few hundred dollars. But for longer sequences we're not out of the woods yet. It will take time to plan, it will hit your budget, and in some cases the success is not even guaranteed. I've seen this being a big factor of project paralysis in Synthetic Biology, with researchers pondering their options, planning their orders for months before taking a leap.
 
-Add to this that five years from now, commercial DNA offers, cloning techniques, and even the nature of projects will be different (I didn't scrape the surface of combinatiorial assembly, multiplexed PCRs, genome editing, and many other subjects I know less about), which makes it a lot of work for software teams to keep up with software tools. All this to say that if you are into algorithms and bioengineering, there should be plenty to do.
+I didn't scrape the surface of combinatiorial assemblies, multiplexed PCRs, genome editing, and many other cloning techniques I know less about. And you could add to this that five years from now, commercial DNA offers, cloning techniques, and even the nature of projects will be different, which makes it a lot of work for software teams to keep up with software tools. So if you are interested in algorithms and bioengineering, there should be plenty to do in the coming years.
