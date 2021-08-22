@@ -13,7 +13,7 @@ tags: [synbio, DNA, assembly, software]
 
 <br/>
 
-Story time! The Edinburgh Genome Foundry, where I worked a few years, is a platform that sells custom synthetic DNA. Customers email long sequences (`ATGCTAC...`, typically 10,000 bases or longer) which an automated setup will produce, generally by assembling smaller DNA fragments into bigger ones.
+Story time! The Edinburgh Genome Foundry, where I worked a few years, is a platform that sells custom synthetic DNA. Customers email long sequences (`ATGCTAC...`, typically 10,000 nucleotides or longer) which are then synthesized on the robotic setup below, by progressively assembling smaller DNA fragments into bigger ones.
 
 <img
   src="../../post_assets/dnaweaver/foundry.jpg"
@@ -22,7 +22,7 @@ Story time! The Edinburgh Genome Foundry, where I worked a few years, is a platf
   width=550
 />
 
-The platform can assemble thousands of DNA fragments per day, but how do you channel enough projects to feed the beast? How do you enable biologists worldwide to order DNA constructs as easily as they would order dinner or a plane trip?
+The platform can assemble thousands of DNA fragments per day, assuming you can channel enough projects to feed the beast. And the first step is to remove barriers for the customers. How do you enable biologists worldwide to order DNA constructs as easily as they would order dinner or a plane trip?
 
 One of our first software projects, a collaboration with <a href='https://www.autodesk.com/' target='_blank'> Autodesk</a> , was a customer portal where users could design DNA sequences and order them from different froundries:
 
@@ -33,17 +33,17 @@ One of our first software projects, a collaboration with <a href='https://www.au
   width=500
 />
 
-The website was sunset by Autodesk before it could become the Skyscanner of large DNA, and while it is <a href='https://github.com/Autodesk/genetic-constructor-ce' target='_blank'> open-source</a> we never had the infrastructure nor the bandwidth to pick it up. Customers would just have to design their sequences with classic software like <a href='https://www.benchling.com/' target='_blank'> Benchling</a>, <a href='https://www.snapgene.com/' target='_blank'>SnapGene</a>, or more likely Microsoft Word (<a href='https://github.com/Edinburgh-Genome-Foundry/crazydoc' target='_blank'>no kidding</a>).
+The website was sunset by Autodesk before it could become the Skyscanner of large DNA, and while it is <a href='https://github.com/Autodesk/genetic-constructor-ce' target='_blank'> open-source</a> we never had the infrastructure nor the bandwidth to maintain it. Customers would just have to design their sequences with classic applications such as <a href='https://www.benchling.com/' target='_blank'> Benchling</a>, <a href='https://www.snapgene.com/' target='_blank'>SnapGene</a>, or more likely Microsoft Word (<a href='https://github.com/Edinburgh-Genome-Foundry/crazydoc' target='_blank'>no kidding</a>).
 
-But the quote generation problem, or _"how to automatically analyse a customer's DNA sequence and determine the cheapest, fastest way our foundry could build it"_ remained a hot topic. Assessing and planning large DNA construction projects manually can take weeks, and some customers don't have the patience. This is particularly true for longer sequences, as these can be built in many, many ways.
+But the quote generation problem, or _how to automatically analyse a customer's DNA sequence and determine the cheapest, fastest way our foundry could build it_, remained a hot topic. Manually assessing and planning large DNA construction projects to the point you can deliver a quote can take weeks for most complex sequences, and some customers won't have the patience. This is how the <a target='_blank' href="https://github.com/Edinburgh-Genome-Foundry/DnaWeaver"> DNA Weaver </a> project was born. the next sections describe how it represents and resolves different DNA construction problems.
 
 ## From parts, from scratch, from snatch
 
-How you build long DNA sequences depends on your preferred DNA assembly techniques, which DNA fragments providers you trust, what DNA fragments you already have in stock, what organisms you could snatch DNA from, and how cheap and fast you want the whole project to be.
+How you build long DNA sequences depends on your preferred DNA assembly techniques, which DNA fragments providers you trust, what DNA fragments you may already have in stock, what organisms you could snatch DNA from, and how cheap and fast you want the whole project to be.
 
 ### Parts assembly projects
 
-The easiest scenario is when customers require sequences that are made up of _standard genetic parts_. These parts are often easy to find (laboratories near you may have them in their fridge if you don't already), easy to replenish miniprep, and designed to easily clip together into a construct. Sometimes this construct is used as a part for a subsequent, higher order construct, and so on until you obtain the desired assembly.
+The easiest scenario is when customers request DNA sequences that can be assembled from _standard genetic parts_. These are DNA fragments that are often easy to find (laboratories near you may have them in their fridge if you don't already), easy to replenish (via miniprep), and designed to easily clip together into a construct. Sometimes this construct is in turn used as a part in a subsequent, higher order construct, and so on until you obtain the desired final sequence.
 
 <img
   src="../../post_assets/dnaweaver/basic_parts_assembly.png"
@@ -52,7 +52,7 @@ The easiest scenario is when customers require sequences that are made up of _st
   width=350
 />
 
-This is cheap, reliable, fast (around one day per assembly), and the planning consists mainly in finding the best order in which to assemble the parts, which can be aided by software solutions like <a target='_blank' href='https://www.cidarlab.org/raven'> RavenCAD </a>:
+Standard parts assembly is cheap, reliable, fast (around one day per assembly), and the planning consists mainly in finding the best order in which to assemble the parts, which can be aided by software solutions like <a target='_blank' href='https://www.cidarlab.org/raven'> RavenCAD </a>:
 
 <img
   src="../../post_assets/dnaweaver/ravencad.png"
@@ -82,7 +82,7 @@ Here is a fully synthetic and re-designed _Caulobacter crescentus_ genome by <a 
 
 ### Bit-of-both assembly projects
 
-Our customer's projects were rarely built entirely from parts, or entirely or scratch, but rather from a mix of DNA reuse and de-novo synthesis. A typical example is the assembly of pre-existing genetic parts from a standard library, with a gene that would be synthesized by one of our external vendor:
+Some sequences are assembled neither entirely from parts, nor entirely or scratch, but rather from a mix of DNA reuse and de-novo synthesis. A typical example is the assembly of pre-existing genetic parts from a standard library, with a gene that would be synthesized by one of our external vendor:
 
 <img
   src="../../post_assets/dnaweaver/library_and_vendors_mix.png"
@@ -90,9 +90,9 @@ Our customer's projects were rarely built entirely from parts, or entirely or sc
   width=500
 />
 
-Some vendors are cheap (count 100$ for a 1000-nucleotide gene) but will only accept "easy" sequences, others will be up to twice more expensive, but will really try and synthesize anything you throw at them.
+Some vendors are cheap (count %100 for a 1000-nucleotide gene) but will only accept "easy" sequences, others will be up to twice more expensive, but will really try and synthesize anything you throw at them.
 
-All vendors have limits on the sequence size they'll accept, and so we would order the longest sequences in multiple smaller fragments (sometimes from different providers) that would then be fused together, possibly at the same time as the other parts:
+All vendors have limits on the sequence size they'll accept, and so the longest sequences must be ordered in multiple smaller fragments (sometimes from different providers) that are then be fused together, possibly at the same time as the other parts of the desired sequence:
 
 <img
   src="../../post_assets/dnaweaver/library_and_vendors_mix_fragments.png"
@@ -110,7 +110,7 @@ If the gene you want is from an organism you have in your freezer (for instance 
   width=580
 />
 
-This method can get you 4,000-nucleotide genetic components for just a few dollars and a day of work! But what if the sequence naturally present is E. coli is only _almost_ the sequence you want, but with two different nucleotides?
+This method can get you 4,000-nucleotide genetic components for just a few dollars and a day of work! But what if the sequence naturally present is _E. coli_ is only _almost_ the sequence you want, with two different nucleotides?
 
 <img
   src="../../post_assets/dnaweaver/the_sequence_we_need.png"
@@ -119,7 +119,7 @@ This method can get you 4,000-nucleotide genetic components for just a few dolla
   width=540
 />
 
-In that case you would use a protocol called _site-directed mutagenesis_ where you order 6 oligos to create 3 fragments with slighlty altered sequences, and fuse everything together:
+In that case you would use a protocol called _site-directed mutagenesis_ where you order 6 oligos and perform 3 separate PCRs, to create 3 fragments with slighlty altered sequences, and fuse everything together:
 
 <img
   src="../../post_assets/dnaweaver/basic_site_directed_mutagenesis.png"
@@ -137,11 +137,11 @@ Not only can DNA fragments come from many different sources, they can also be fu
   width=500
 />
 
-These methods vary in how many sequence fragments they can assemble at once, which sequence patterns will cause problems (repeats, secondary structures, homologies), which fragments and oligos sequences must be ordered, etc.
+These methods vary in their capabilities, for instance how many sequence fragments they can assemble at once, which sequence patterns will cause problems (repeats, secondary structures, homologies, etc,), which fragments and oligos sequences must be ordered to perform an assembly, and so on.
 
 ### So yeah, it's complicated
 
-The multitude of sources and assembly methods can make the planning of large DNA assemblies a hard combinatorial problem. I've seen meetings for complex projects where everyone with DNA wisdom is gathered in a same room, the sequence(s) to build put on display, and it goes a bit like this:
+The multitude of possible sources and assembly methods can make the planning of large DNA assemblies a hard combinatorial problem. I've seen meetings for complex projects where everyone with DNA wisdom is gathered in a same room, the sequence(s) to build put on display, and it goes a bit like this:
 
 <img
   src="../../post_assets/dnaweaver/elrond.jpg"
