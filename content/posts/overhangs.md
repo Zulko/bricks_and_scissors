@@ -215,11 +215,11 @@ The most intuitive algorithm to generate a set of valid overhangs is constructiv
 
 This seems to be the approach taken in NEB's GetSet app ([Pryor et al 2020](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0238592)). It works well for reasonably sized assemblies, but if you need to find 20+ compatible overhangs the method may rtake some time, and is not guaranteed to produce a large enough overhang set.
 
-Since DNA overhang design was an important part of my job at the Edinburgh Genome Foundry and customers kept coming up with difficult problems, I implemented in a Python library ([GoldenHinges](https://github.com/Edinburgh-Genome-Foundry/GoldenHinges)) with different approaches which I'll describe below.
+As DNA overhang design was an important part of my job at the Edinburgh Genome Foundry and customers kept coming up with difficult problems, I started a Python library called [GoldenHinges](https://github.com/Edinburgh-Genome-Foundry/GoldenHinges) with different approaches which I'll explain below.
 
 ### A slick clique trick
 
-In this approach, you first list all the overhangs that you'll allow yourself to use. For instance, all overhangs with at least one G/C and one A/T, which are compatible with ACTC,AGGC, and GATG. You generally end up with a restricted set of possible overhangs:
+In this approach, you first list all the overhangs that you'll allow yourself to use. For instance, all overhangs which have at least one G-or-C and one A-or-T, and are compatible with overhangs ACTC,AGGC, and GATG. You generally end up with a restricted set of possible overhangs:
 
 <img
   src="../../post_assets/overhang_design/overhangs_no_edges.png"
@@ -227,7 +227,7 @@ In this approach, you first list all the overhangs that you'll allow yourself to
   width=400
 />
 
-Next, you draw an edge between each pair of overhangs that are compatible according to your criteria, which can be for instance _"the two overhangs and their reverse-complements must have at least 2 different nucleotides"_ :
+Next, you draw an edge between each pair of overhangs that are compatible according to your criteria, which can be for instance _"any two overhangs and their reverse-complements must have at least 2 different nucleotides"_ :
 
 <img
   src="../../post_assets/overhang_design/compatibility_graph.png"
@@ -243,7 +243,7 @@ Now any valid set of overhangs (where all overhangs are inter-compatible) corres
   width=400
 />
 
-The good news is that clique finding has been the bread and butter of graph theorists for a long time, and they have come up with sophisticated algorithms to quickly spot the best and largest cliques of a graph (see Bron-Kerbosch, Tarjan-Trojanowski, to cite only the ones with the most impressive names).
+The good news is that clique finding has been the bread and butter of graph theorists for a long time, and they have come up with sophisticated algorithms to quickly spot the best and largest cliques of a graph (see Bron-Kerbosch or Tarjan-Trojanowski, to cite only the ones with the most impressive names).
 
 It can be daunting to go through all the literature and understand the subtleties of each approach, but I have a PhD in Applied Mathematics, so I googled _"python clique finding"_ and used whichever library the first link told me to. Turns out the excellent Networkx library has all the methods we need! For instance this ~10-line snippet generates a collection of 32 compatible overhangs with 75% G/C:
 
@@ -268,7 +268,7 @@ print (max_clique)
 
 ### Have a constraints problem? Try a constraints solver!
 
-The clique trick is great for finding new sets of compatible overhangs, but it cannot be applied to sequence decomposition problems where each overhang must be drawn from a different set:
+The clique trick is great for finding new sets of compatible overhangs, but it cannot be applied to sequence decomposition problems where each overhang must be drawn from a different set, like this one:
 
 <img
   src="../../post_assets/overhang_design/cut_around_here_fragments.png"
