@@ -348,8 +348,6 @@ Here is an illustration (from user user <a target='blank' href='https://en.wikip
 
 The speed and good approximation make A\* a good choice for interactive applications, and it has been used for real-time strategy games such as Age of Empire, which require to move many units through the map without any lag:
 
-<p>TEst</p>
-
 <img src="../../post_assets/dnaweaver/a_star/aoe.jpeg" style="display: block; margin: 2cm auto 2cm; width: 550px;"/>
 
 A\* is so good at ignoring graph edges because it is fed a particular piece of information from which it will evaluate, at any point of the search, how far it is from its goal. For the illustration above, the information may be the geometric distance to the goal divided by the average terrain speed. If you are looking for the fastest trip in a city, Google Maps will probably use the distance to your goal, divided by the typical speed of the city's transportation opportunities. To find the cheapest DNA construction strategy, that information will be the number of nucleotides left, times the typical price per-nucleotide price of DNA.
