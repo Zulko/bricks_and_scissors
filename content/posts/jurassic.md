@@ -2,7 +2,7 @@
 author: "Zulko"
 title: "Genetic engineering in the Jurassic Park novel"
 date: 2021-04-08T08:47:11+01:00
-tags: [synbio, DNA, assembly, software]
+tags: [synbio, DNA, fiction, futurology, dinos]
 draft: true
 ---
 
@@ -53,8 +53,8 @@ This, the author continues, was made worse when cash-loaded private companies st
 <img
   src="https://images.squarespace-cdn.com/content/v1/57645a78ebbd1a1d25dcb511/1519779753725-WARIH56WVQ2M4DSJSGM7/BEC_DNA_Price_2017.png"
   style='display: block; margin: 0 auto;'
-  width=650
-/>
+  width=650/>
+
 <center>
 (from <a href="http://www.synthesis.cc/synthesis/category/Carlson+Curves">Rob Carlson's Synthesis blog</a>)
 </center>
@@ -74,13 +74,15 @@ Business-first principles don't just impact the line of products, they also cont
 
 **Comments:**
 
-- Michael Crichton has a talent for mixing real technology and science-fiction. The GMO fish industry was [already a thing in the 1980s](https://www.nature.com/articles/nbt0387-257) but I couldn't find any real-life projects of paler trouts. Similarly, I found no mention of square-shaped trees, although [house-shaped trees](https://www.forbes.com/sites/johncumbers/2019/09/26/can-we-redesign-the-modern-city-with-synthetic-biology-could-we-grow-our-houses-instead-of-building-them/?sh=6ec09df8299b) are often promised. Finally, scent cells are a thing, and they had their [interesting moments](https://www.theguardian.com/technology/2014/nov/24/sweet-peach-vagina-smell-like-fruit-taste-diet-coke-probiotic) (don't miss the mention of banana-smelling dog poo!)
-- Even though Crichton's examples may be made-up, his comment on *"the industries traditionally subject to the vagaries of fashion"* is still spot on today: the same biotechnology that produces new therapies can also lead to new food and chemicals. Strain from companies like Amyris or Ginkgo Bioworks produce molecules and proteins used in medicines, cloths, cell-phones, recreational cannabis, food colorants, alternative meat, pet food, car tires, cosmetics, paint, and many more products. However, in these examples the final product is entirely "grown", but rather a mix of bioengineering and natural or chemical products. The industry has yet to come up with a true "biological walkman". A class of true *"consumer biologicals"* coming to market are genetically modified pets, which became a thing with [glowing fishes](https://www.glofish.com/), and may soon be joined by [CRISPRed hypo-alergenic cats](https://www.nature.com/articles/d41586-020-02779-3). 
+- Michael Crichton has a talent for mixing real technology and science-fiction. The GMO fish industry was [already a thing in the 1980s](https://www.nature.com/articles/nbt0387-257) but I couldn't find any real-life projects of paler trouts. Similarly, I found no mention of square-shaped trees, although [house-shaped trees](https://www.forbes.com/sites/johncumbers/2019/09/26/can-we-redesign-the-modern-city-with-synthetic-biology-could-we-grow-our-houses-instead-of-building-them/?sh=6ec09df8299b) are often promised. Finally, scent cells are a thing, and had their [interesting moments](https://www.theguardian.com/technology/2014/nov/24/sweet-peach-vagina-smell-like-fruit-taste-diet-coke-probiotic) (don't miss the mention of banana-smelling dog poo!)
+- Even though Crichton's examples may be made-up, his comment on *"the industries traditionally subject to the vagaries of fashion"* is still spot on today: biotechnology that help produces new gene therapies can also lead to new food and chemicals. Strain from companies like Amyris or Ginkgo Bioworks produce molecules and proteins used in medicines, cloths, cell-phones, recreational cannabis, food colorants, alternative meat, pet food, car tires, cosmetics, paint, and much more. However, in these examples the final product is generally a mix of bioengineering and natural or chemical products. The industry has yet to come up with a true "biological walkman", a groundbreaking product that would just be grown and sold. A class of true *"consumer biologicals"* coming to market are genetically modified pets, which became a thing with [glowing fishes](https://www.glofish.com/), and may soon be joined by [CRISPRed hypo-alergenic cats](https://www.nature.com/articles/d41586-020-02779-3). 
 - John Hammond's remarks on public outrage and government intervention in medication prices has had recent echoes, with [California moving to produce its own insulin](https://www.healthcaredive.com/news/California-manufacture-insulin/626916/#:~:text=California%20is%20preparing%20to%20produce,biosimilar%20insulin%20products%20for%20Californians.) to slash costs, and with the [2015 Daraprim price hike](https://en.wikipedia.org/wiki/Martin_Shkreli#Turing_Pharmaceuticals) from \$13 to \$750 a pill, rasing questions from US Senators, and a FBI probe into the CEO's finances.
 
 ### Biotech companies: _"as reckless as ever"_
 
-Michael Crichton is not only displeased with the biotech industry's offerings, he also doesn't think much of its leaders. The parks' creator, John Hammond, is described as a _"flamboyant, born showman"_ whose first venture was a pigmy pet elephant, and a bit of a scam - his prototype "mini-elephant" hadn't really been genetically modified as Hammond claimed to investors, but altered via a hormonal treatment.
+Michael Crichton is not only displeased with the biotech industry's offerings, he also doesn't think much of its leaders. The parks' creator, John Hammond, is described as a _"flamboyant, born showman"_ whose first venture was a pigmy pet elephant, and a bit of a scam - his prototype "mini-elephant" hadn't really been genetically modified as Hammond claimed to investors, but altered via a hormonal treatment (a fake-it-until-you-make-until attitude that bears resemblance with recent companies like Theranos). It is clear throughout the book that with his dinosaur park, Hammond is always playing with the limits of the law:
+
+> *"There wasn't much that Office of Technology Transfer could do. InGen was obviously setting up one of the most powerful genetic engineering facilities in the world in an obscure Central American country. A country with no regulations. That kind of thing has happened before."*
 
 Hammond's main competitor, the company BioSyn, has done much worse: they vaccinated Chilean farmers with an untested rabbies virus that had been genetically modified to be airborne, and that they had transported in a carry-on bad in a commercial flight. And they got away with it:
 
@@ -88,25 +90,32 @@ Hammond's main competitor, the company BioSyn, has done much worse: they vaccina
 
 **Comments**
 
-- The fake-it-until-you-make-it attitude of John Hammond and his pigmy elephant is still common today, the most famous recent example being been Theranos and their not-really-working blood testing kit.
-- InGen and BioSyn are great biotech company names. BioSyn is likely a pun on "bio sin", but surprisingly (and possibly not on purpose) also the name of a [real-life Californian vaccine products company](https://biosyncorp.com/biosyn-corp-news/about-us/production-history/) which started in the 1970s and also sought commercialization authorizations in South America in the 2000s, what where the odds! And a whole bioengineering subfield called "synbio" (for Synthetic Biology) emerged in the 2000s.
-InGen still doesn't share a name with a real-life company, although Scotland-based synbio company [Ingenza](https://www.ingenza.com/) (founded in 2002) comes close.
 - The fictional vaccinal experimentations of Biosyn sound unfortunately credible. [Here is the wikipedia page of human experimentation for the US alone](https://en.wikipedia.org/wiki/Unethical_human_experimentation_in_the_United_States), in case you wanted a bad day. Note that only a very small fraction of scandals relates to vaccines, and the vast majority of misconducts were carried out on US territory and by state organisms, not companies. The [Guatemala syphilis experiment](https://en.wikipedia.org/wiki/Guatemala_syphilis_experiments) (read the study detail section!) in particular involved the US government and *possibly* one US company (there's a trial in progress and I'd rather not get sued).
 The list of experimentations on US territory stops abruptly after the 60s, possibly because of the success of new regulation measures, but then a few scandals involving US pharma companies [start emerging in Africa in the 90s](https://en.wikipedia.org/wiki/Medical_experimentation_in_Africa).
+- 
 - Another ethical issue raised by Biosyn's engineered rabbies virus is that of gain-of-function research, whereby scientists add a new capability to a virus for research or therapeutic purposes. This is still a hot topic today (especially with questions around whether COVID was a consequence of gain-of-function research) and regulations get re-evaluated all the time. The US notably decreed a [pause in experimentations](https://www.nih.gov/news-events/gain-function-research-involving-potential-pandemic-pathogens) between 2014 and 2017.
 
 
+As an aside, InGen and BioSyn are great biotech company names. BioSyn is likely a pun on "bio sin", but surprisingly (and possibly not on purpose) also the name of a [real-life Californian vaccine products company](https://biosyncorp.com/biosyn-corp-news/about-us/production-history/) which started in the 1970s and also sought commercialization authorizations in South America in the 2000s, what where the odds! And a whole bioengineering subfield called "synbio" (for Synthetic Biology) emerged in the 2000s.
+InGen still doesn't share a name with a real-life company, although Scotland-based synbio company [Ingenza](https://www.ingenza.com/) (founded in 2002) comes close.
 
 ### Bio-espionage: _"A bacterium worth five billion dollars"_
 
-Industrial espionage is at the heart of the Jurassic Park story, where Biosyn attempts to steal their competitor's dinosaur embryos, with catastrophic consequences. As the author explains, _"a single microscopic bacterium, too small to see with the naked eye, but containing the genes for a heart-attack enzyme, streptokinase, or for “ice-minus,” which prevented frost damage to crops, might be worth five billion dollars to the right buyer. And that fact of life had created a bizarre new world of industrial espionage."_
+> _"A single microscopic bacterium, too small to see with the naked eye, but containing the genes for a heart-attack enzyme, streptokinase, or for “ice-minus,” which prevented frost damage to crops, might be worth five billion dollars to the right buyer. And that fact of life had created a bizarre new world of industrial espionage."_
 
-
-In the book, we learn that this is not Biosyn's first rodeo: a few years before, they were stealing strains from Cetus (a [real pharma company](https://en.wikipedia.org/wiki/Cetus_Corporation), now part of Novartis, where PCR was invented in 1983!). They convinced a disgruntled employee  to _"quit Cetus for Biosyn, and take five strains of engineered bacteria with her. The geneticist simply put a drop of each on the fingernails of one hand, and walked out the door._
+Industrial espionage is at the heart of the Jurassic Park story, where BioSyn attempts to steal their competitor's dinosaur embryos (in a shaving cream can!) with catastrophic consequences. In the book, we learn that this is not Biosyn's first rodeo: a few years before, they were stealing strains from Cetus (a [real pharma company](https://en.wikipedia.org/wiki/Cetus_Corporation), now part of Novartis, where PCR was invented in 1983!). They convinced a disgruntled employee  to _"quit Cetus for Biosyn, and take five strains of engineered bacteria with her. The geneticist simply put a drop of each on the fingernails of one hand, and walked out the door._
 
 **Comments:**
 
+
+The streptokinase example is real - it is a natural protein used by a bacterium (streptococcus) to break blood clots when infecting their hosts. It has been repurposed by the biopharma industry to threat unwanted blood cloths (a.k.a. thrombosis) and the streptokinase gene has been transferred to more industrially friendly microbes such as yeast.
+
+The ice-minus gene is a very interesting piece of bioengineering history that goes like this: *Pseudomonas syringae* is a bacterium that leaves on plants and produce a protein that will encourage the formation of ice (the ice crystals can tear the skin of fruits and leaves and release food for the bacterium). In the 1980s, US company Advanced Genetic Sciences created a new *syringae* strain with a broken version of the gene behind this protein (now called ice-minus because it won't be able to produce ice) (unclear to me why they didn't just delete it) and sprayed it on potato fields, so that the broken strain would outcompete the natural, frost-causing strain. They noted ["60% of the treated plants suffered no frost damage at 25 degrees, whereas all the untreated plants were damaged."](https://www.latimes.com/archives/la-xpm-1987-06-09-mn-6024-story.html). But their experiment, the first open-field release of bacteria in history, was literally cut short as their crops were uprooted and a huge public backlash ensued, leading to the birth of the [Coordinated Framework for Regulation of Biotechnology](Coordinated Framework for Regulation of Biotechnology). (See [wikipedia](https://en.wikipedia.org/wiki/Ice-minus_bacteria) for more)
+
 I couldn't find any real-world trace of that fingernail bio-theft stunt, but it is definitely credible. Some microbes can survive on a piece of paper, and custom officers will have a hard time detecting that the hand-drawn circle on the back of a research article actually mark the spot for genetically modified spores.
+
+### Bio-outsourcing
+
 
 ### Paleobiology: *"no dinosaur DNA was known to exist anywhere in the world"*
 
@@ -128,20 +137,45 @@ Although I couldn't identify what the _"1982 discussion on cloning dinosaurs"_ r
 
 To this day, only one extinct animal has been successfully brought back to life from DNA. The last Pyrenean ibex (a species of wild goat) died in 2000, but in 2003 scientist transferred DNA from its ear into a goat egg cell and impregnating a female goat. The resulting baby ibex lived only 7 minutes, however, because of a lung defect - and even if she had lived, she would have had no males to reproduce with, which doesn't constitute a sustainable de-extinction.   
 
-One piece of biology missing is how dinosaurs would adapt to our 65-million-year-younger ecosystem, full of animals, parasites and pathogens that they haven't evolved with. Another common argument is that dinosaurs evolved in an atmosphere with much more oxygen (which is why some could afford to be so big). However, species have been seen to adapt to lower oxygen levels - the people of the Lima plateau live half less oxygen than the people on  
+One piece of biology missing is how dinosaurs would adapt to our 65-million-year-younger ecosystem, full of animals, parasites and pathogens that they haven't evolved with. Would they survive our atmosphere, which has half the oxygen they used to enjoy? Species have been seen to adapt to lower oxygen levels - the people of the Lima plateau live on half the oxygen of people at sea level.   
 
 ### Bioinformatics: “What kind of a database has three billion records ?”
 
+> Nedry had gone to see Barney Fellows over at Symbolics, near the M.I.T. campus in Cambridge. “What kind of a database has three billion records, Barney?” . “A mistake,” Barney said, laughing. “That's crazy, Even if you had the fastest processors and blindingly fast algorithms, a search would still take days. Maybe weeks.” But still . . . what could the database be for?” Barney said. “Well, there's the obvious. . . . A DNA molecule.”
 Before the dinosaurs are flesh and blood in the park, they are DNA sequences in a computer.
 
-**Comments:**
 
+
+On the DNA visualization software:
 We'll see that while the science in jurassic park is still futuristic today, the informatics that were cutting edge for the 1990s have grown old.
 Jurassic Park also talks a lot about actual software. Their hardware has grown old.
 
+On the supercomputer export restrictions:
+- It's interes
+
 Which, to stay in the software metaphore, is a bit like copying over code you don't understand from Stackoverflow.
 
+# Biosoftware
+
+
+<img
+  src="../../post_assets/jurassic_park/dna-visualization-screenshot.png"
+  style='display: block; margin: 0 auto;'
+  width=500/>
+
+**Comments:**
+
 Benchling comparison
+
+### Bioprediction: *"How do you know what animal it encodes?"*
+
+This is a fun one:
+
+> “Once the computer has analyzed the DNA, how do you know what animal it encodes?”. “We have two procedures,” Wu said. “The first is phylogenetic mapping. We can take an unknown piece of DNA and determine roughly, by computer, where it fits in the evolutionary sequence.”  “And the other way?” Wu shrugged. “Just grow it and find out what it is”.
+
+This still makes sense today, we can often infer what a sequence of DNA does by comparison with similar sequences in better-known species. But sometimes the best way to understand what a gene does is to observe it in the lab. 
+
+
 
 ### Biofoundries: "You are standing in the middle of an incredibly powerful genetics factory."
 

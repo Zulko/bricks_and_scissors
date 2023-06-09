@@ -22,13 +22,10 @@
     .archive-year {
         margin-top: 20px;
     }
-}
 
-@media screen and (min-width: 768px) {
-    /* reset */
-    ::-webkit-scrollbar {
-        width: 19px;
-        height: 11px;
+    /* footer */
+    .footer {
+        padding: calc((var(--footer-height) - var(--gap) - 10px) / 2) var(--gap);
     }
 }
 
@@ -43,7 +40,6 @@
     /* terms; profile-mode; post-single; post-entry; post-entry; search; search */
     .terms-tags a:active,
     .button:active,
-    .share-buttons svg:active,
     .post-entry:active,
     .top-link,
     #searchResults .focus,
