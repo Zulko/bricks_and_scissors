@@ -23,4 +23,4 @@ jobs:
           hugo-version: "latest"
 
       - name: Build
-        run: pwd; hugo --buildDrafts --gc --verbose --minify
+        run: echo *; hugo --buildDrafts --gc --verbose --minify
