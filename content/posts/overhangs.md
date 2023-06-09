@@ -11,46 +11,40 @@ tags: [synbio, DNA, design]
 
 ---
 
-
 If you want to stitch more than 2 bits of DNA together, the most popular method these days is probably Golden Gate Assembly. In a nutshell, you mix DNA fragments in a tube where enzymes will cut their flanks to create _overhangs_ (also called _sticky ends_), then fuse the overhangs together to form the desired DNA construct:
 
 <img
   src="../../post_assets/overhang_design/simple_dna_assembly.png"
   style='display: block; margin: 2em auto 2em;'
-  width=550
-/>
+  width=550/>
 
 How do we know that the DNA parts will assemble in the expected order A-B-C-D, and not C-A-B-D or D-A-C-B ? This is because their DNA sequences are designed so that the 4 nucleotides at the end of each part match the 4 nucleotides at start of the next part, like in a game of dominos:
 
 <img
   src="../../post_assets/overhang_design/successive_overhangs.png"
   style='display: block; margin: 2em auto 2em;'
-  width=500
-/>
+  width=500/>
 
 Let's have a closer look at Parts A and B. Each has two strands, with the lower strand being the _complementary_ of the upper one ("T" complements "A", and "G" complements "C"):
 
 <img
   src="../../post_assets/overhang_design/parts_closer_look.png"
   style='display: block; margin: 2em auto 2em;'
-  width=500
-/>
+  width=500/>
 
 When the flank-cutting enzyme cuts the right flank of Part A, it leaves an overhang of four "bare" nucleotides on the lower strand. When it cuts the left flank of Part B, it leaves another overhang, this time on the upper strand:
 
 <img
   src="../../post_assets/overhang_design/digestion_detail.png"
   style='display: block; margin: 2em auto 2em;'
-  width=450
-/>
+  width=450/>
 
 The two ends are perfectly complementary and will be fused to form a single DNA molecule:
 
 <img
   src="../../post_assets/overhang_design/ligation_detail.png"
   style='display: block; margin: 2em auto 2em;'
-  width=350
-/>
+  width=350/>
 
 Bioengineers can assemble many parts at once using this method -- typically 10, 20, or even 30+ parts for the most ambitious projects. But as the number of parts increases, so does the difficulty of finding overhang sequences that play well together.
 
@@ -61,8 +55,7 @@ Throughout the DNA assembly protocol, several copies of each part are freely flo
 <img
   src="../../post_assets/overhang_design/parts_in_water.png"
   style='display: block; margin: 2em auto 2em;'
-  width=450
-/>
+  width=450/>
 
 One thing we really want to avoid here is the accidental fusion of parts that were not meant to fuse together, which would create "monster" DNA molecules and prevent the formation of the desired construct. To this end, a few logical rules must be observed.
 
@@ -73,8 +66,7 @@ Don't use the same overhang sequence for different part fusions. If the overhang
 <img
   src="../../post_assets/overhang_design/skipped_overhang.png"
   style='display: block; margin: 2em auto 2em;'
-  width=450
-/>
+  width=450/>
 
 **Design rule #2**
 
@@ -83,8 +75,7 @@ Beware of reverse-complementary overhangs! In the example below, each fusion is 
 <img
   src="../../post_assets/overhang_design/reverse_complements.png"
   style='display: block; margin: 2em auto 2em;'
-  width=600
-/>
+  width=600/>
 
 This is bad because many copies of Parts A and C will be lost in this useless fusion. Other copies of the parts may still assemble in the right order to produce the expected construct, but the probability of success will be decreased.
 
@@ -95,8 +86,7 @@ Don't use overhang sequences that are their own reverse-complements. For instanc
 <img
   src="../../post_assets/overhang_design/palyndromic_overhang.png"
   style='display: block; margin: 2em auto 2em;'
-  width=500
-/>
+  width=500/>
 
 ### Pop quiz!
 
@@ -107,8 +97,7 @@ According to the rules above, which letter should replace the X?
 <img
   src="../../post_assets/overhang_design/problem_1.png"
   style='display: block; margin: 2em auto 2em;'
-  width=550
-/>
+  width=550/>
 
 **Problem 2**
 
@@ -117,8 +106,7 @@ Is this overhang set valid? List the reasons why not.
 <img
   src="../../post_assets/overhang_design/problem_2.png"
   style='display: block; margin: 2em auto 2em;'
-  width=600
-/>
+  width=600/>
 
 **Problem 3**
 
@@ -127,8 +115,7 @@ Let's throw some real-world shade! What would you improve in the overhang design
 <img
   src="https://media.addgene.org/data/easy-thumbnails/filer_public/cms/filer_public/57/70/577078e5-b78e-4f6f-b380-e9de2eed96f8/ecoflex-figure-1b.png__400x498_q85_subsampling-2_upscale.png"
   style='display: block; margin: 2em auto 2em;'
-  width=500
-/>
+  width=500/>
 
 **Still too easy?**
 
@@ -147,8 +134,7 @@ Other constraints arise when designing overhangs that will appear at biologicall
 <img
   src="../../post_assets/overhang_design/phytobrick.png"
   style='display: block; margin: 2em auto 2em;'
-  width=650
-/>
+  width=650/>
 
 Notice that the second overhang `AATG` is at the very beginning of a coding sequence, which is why it contains `ATG`, the sequence of the Methionine _start codon_. In the next overhang, `AGCC`, the `GCC` codes for Alanine, a very small amino-acid commonly used in "chains" linking proteins and tags together. Likewise , `TCG` in the next overhang codes for Serine, another small amino-acid used in chains. All other overhang sequences in the standard (not shown here) have therefore had to be designed to be compatible with these imposed sequences.
 
@@ -161,32 +147,28 @@ In more demanding bioengineering projects, the desired sequences are so biologic
 <img
   src="../../post_assets/overhang_design/scarless_assembly.png"
   style='display: block; margin: 2em auto 2em;'
-  width=650
-/>
+  width=650/>
 
 This constraint still leaves some choice in the overhang sequences. For instance we could decide that the first fragment should fuse with the second fragment _somewhere_ in a certain 6-nucleotide region, which gives us 3 options depending on where exactly the fusion occurs:
 
 <img
   src="../../post_assets/overhang_design/fusion_in_this_zone.png"
   style='display: block; margin: 2em auto 2em;'
-  width=200
-/>
+  width=200/>
 
 Each overhang of the assembly will be picked from a different region of the final sequence, and so will have its own set of options, making the design overhang problem look like this:
 
 <img
   src="../../post_assets/overhang_design/cut_around_here_fragments.png"
   style='display: block; margin: 2em auto 2em;'
-  width=700
-/>
+  width=700/>
 
 The example above is a bit underwhelming, but biologists have managed some really impressive scarless assemblies: the schema below describes how [Tsuge et al., (2015)](https://www.nature.com/articles/srep10655) assembled a whole _phage virus_ genome of ~50,000 nucleotides in a single operation, by stitching together 50 fragments of ~1000 nucleotides each. This required crazy tweaks to the assembly protocol, but also the selection of 50 fully inter-compatible overhangs located ~1000 nucleotides apart in the phage's genome. Such a great assembly design!
 
 <img
   src="../../post_assets/overhang_design/tsuge_et_al.png"
   style='display: block; margin: 2em auto 2em;'
-  width=650
-/>
+  width=650/>
 
 **Extra rule #3**
 
@@ -204,8 +186,7 @@ More recently [Potapov et al (2018)](https://pubs.acs.org/doi/10.1021/acssynbio.
 <img
   src="../../post_assets/overhang_design/potapov_et_al.png"
   style='display: block; margin: 2em auto 2em;'
-  width=450
-/>
+  width=450/>
 
 ## It's a computer game after all
 
@@ -224,24 +205,21 @@ In this approach, you first list all the overhangs that you'll allow yourself to
 <img
   src="../../post_assets/overhang_design/overhangs_no_edges.png"
   style='display: block; margin: 2em auto 2em;'
-  width=400
-/>
+  width=400/>
 
 Next, you draw an edge between each pair of overhangs that are compatible according to your criteria, which can be for instance _"any two overhangs and their reverse-complements must have at least 2 different nucleotides"_ :
 
 <img
   src="../../post_assets/overhang_design/compatibility_graph.png"
   style='display: block; margin: 2em auto 2em;'
-  width=400
-/>
+  width=400/>
 
 Now any valid set of overhangs (where all overhangs are inter-compatible) corresponds to a subset of the graph where every pair of nodes is connected by an edge, also known as a graph _clique_ (like your _clique_ of friends in the Facebook friendship graph):
 
 <img
   src="../../post_assets/overhang_design/clique.png"
   style='display: block; margin: 2em auto 2em;'
-  width=400
-/>
+  width=400/>
 
 The good news is that clique finding has been the bread and butter of graph theorists for a long time, and they have come up with sophisticated algorithms to quickly spot the best and largest cliques of a graph (see Bron-Kerbosch or Tarjan-Trojanowski, to cite only the ones with the most impressive names).
 
@@ -273,8 +251,7 @@ The clique trick is great for finding new sets of compatible overhangs, but it c
 <img
   src="../../post_assets/overhang_design/cut_around_here_fragments.png"
   style='display: block; margin: 2em auto 2em;'
-  width=650
-/>
+  width=650/>
 
 The only solutions I've seen in the literature were written for the J5 framework ([Hillson et al 2011](https://pubs.acs.org/doi/pdf/10.1021/sb2000116)) and the 50,000-nucleotide phage assembly mentioned above ([Tsuge et al. 2015](https://www.nature.com/articles/srep10655)), and both use custom-written _branch-and-bound_ algorithms. A low-effort way to leverage sophisticated branch-and-bound algorithms is to use a constraint programming framework, by translating the problem into rules that the framework understands:
 
