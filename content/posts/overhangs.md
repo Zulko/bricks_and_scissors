@@ -11,7 +11,7 @@ tags: [synbio, DNA, design]
 
 ---
 
-or only to come up with it
+
 If you want to stitch more than 2 bits of DNA together, the most popular method these days is probably Golden Gate Assembly. In a nutshell, you mix DNA fragments in a tube where enzymes will cut their flanks to create _overhangs_ (also called _sticky ends_), then fuse the overhangs together to form the desired DNA construct:
 
 <img
